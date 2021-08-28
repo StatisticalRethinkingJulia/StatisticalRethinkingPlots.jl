@@ -43,10 +43,10 @@ and slope parameters).
 
 """
 function plotbounds(
-  df::DataFrame, 
+  df::DataFrame,
   xvar::Symbol,
-  yvar::Symbol, 
-  dfs::DataFrame, 
+  yvar::Symbol,
+  dfs::DataFrame,
   linkvars::Vector{Symbol};
   fnc = link,
   fig::AbstractString="",
