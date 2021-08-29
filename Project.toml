@@ -21,14 +21,15 @@ LaTeXStrings = "1.2"
 Parameters = "0.12"
 Plots = "1.20"
 Requires = "1.1"
-StatisticalRethinking = "4"
+StatisticalRethinking = "3, 4"
 StatsBase = "0.33"
 StatsPlots = "0.14"
 julia = "1"
 
 [extras]
 StanSample = "c1514b29-d3a0-5178-b312-660c88baa699"
+StatisticalRethinking = "2d09df54-9d0f-5258-8220-54c2a3d4fbee"
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [targets]
-test = ["StanSample", "Test"]
+test = ["StanSample", "StatisticalRethinking", "Test"]

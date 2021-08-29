@@ -1,6 +1,6 @@
 using StanSample, StatsPlots
 using StatisticalRethinking
-using StatisticalRethinkingPlots
+using StatisticalRethinkingPlots, Test
 
 df = CSV.read(sr_datadir("WaffleDivorce.csv"), DataFrame);
 scale!(df, [:Marriage, :MedianAgeMarriage, :Divorce])
@@ -112,7 +112,7 @@ if success(rc5_1s) && success(rc5_2s) && success(rc5_3s)
     m5_1s_df = read_samples(m5_1s, :dataframe)
     m5_2s_df = read_samples(m5_2s, :dataframe)
     m5_3s_df = read_samples(m5_3s, :dataframe)
-    coeftab_plot(m5_1s_df, m5_2s_df, m5_3s_df; pars=(:bA, :bM),
+    StatisticalRethinkingPlots.coeftab_plot(m5_1s_df, m5_2s_df, m5_3s_df; pars=(:bA, :bM),
         names=["m5.1", "m5.2", "m5.3"])
     savefig("coeftab_plot.png")
 end
