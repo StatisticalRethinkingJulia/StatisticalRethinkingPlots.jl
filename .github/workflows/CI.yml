@@ -48,7 +48,7 @@ jobs:
           cd $OLDWD
         env:
           JULIA_CMDSTAN_HOME: "/home/runner/cmdstan-2.27.0/"
-       - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
       - uses: julia-actions/setup-julia@v1
         with:
           version: ${{ matrix.version }}
