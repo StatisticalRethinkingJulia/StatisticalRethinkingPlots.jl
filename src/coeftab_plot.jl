@@ -1,3 +1,5 @@
+using StatisticalRethinking: PI
+
 """
 
 # coeftab_plot
@@ -38,7 +40,7 @@ function coeftab_plot(dfs::DataFrame...; pars=missing, pars_names=missing, names
         for (name, df) ∈ zip(names, dfs)
             p ∈ propertynames(df) || continue
             μ = mean(df[!,p])
-            err = abs.(StatisticalRethinking.PI(df[!,p], prob=perc_prob) .- μ)
+            err = abs.(PI(df[!,p]; prob=perc_prob) .- μ)
             pushfirst!(x, μ)
             label = length(dfs) == 1 ? "$p_name" : "$p_name: $name"
             pushfirst!(y, label)
