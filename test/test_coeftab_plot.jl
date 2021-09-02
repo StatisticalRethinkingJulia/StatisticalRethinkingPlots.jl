@@ -1,11 +1,11 @@
-using StanSample, StatsPlots
-using StatisticalRethinking
+using StanSample, StatsPlots, StatsBase
 using StatisticalRethinkingPlots
 
-df = CSV.read(sr_datadir("WaffleDivorce.csv"), DataFrame);
-scale!(df, [:Marriage, :MedianAgeMarriage, :Divorce])
-data = (N=size(df, 1), D=df.Divorce_s, A=df.MedianAgeMarriage_s,
-    M=df.Marriage_s)
+df = CSV.read(joinpath("..", "data", "WaffleDivorce.csv"), DataFrame);
+df[!, :M] = zscore(df.Marriage)
+df[!, :A] = zscore(df.MedianAgeMarriage)
+df[!, :D] = zscore(df.Divorce)
+data = (N=size(df, 1), D=df.D, A=df.A, M=df.M)
 
 stan5_1 = "
 data {
@@ -112,9 +112,10 @@ if success(rc5_1s) && success(rc5_2s) && success(rc5_3s)
     m5_1s_df = read_samples(m5_1s, :dataframe)
     m5_2s_df = read_samples(m5_2s, :dataframe)
     m5_3s_df = read_samples(m5_3s, :dataframe)
-    if isinteractive()
+    #if isinteractive()
+        println("Plotting coeftab().")
         coeftab_plot(m5_1s_df, m5_2s_df, m5_3s_df; pars=(:bA, :bM),
             names=["m5.1", "m5.2", "m5.3"])
         savefig(joinpath(@__DIR__, "coeftab_plot.png"))
-    end
+    #end
 end
