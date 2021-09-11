@@ -1,9 +1,3 @@
-function percint(data, prob=0.89)
-    d = (1-prob)/2
-    quantile(data, [d, 1-d])
-end
-
-
 """
 
 # coeftab_plot
@@ -44,7 +38,7 @@ function coeftab_plot(dfs::DataFrame...; pars=missing, pars_names=missing, names
         for (name, df) ∈ zip(names, dfs)
             p ∈ propertynames(df) || continue
             μ = mean(df[!,p])
-            err = abs.(percint(df[!,p], perc_prob) .- μ)
+            err = abs.(PI(df[!,p]; perc_prob) .- μ)
             pushfirst!(x, μ)
             label = length(dfs) == 1 ? "$p_name" : "$p_name: $name"
             pushfirst!(y, label)

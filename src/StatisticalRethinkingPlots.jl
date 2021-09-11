@@ -4,7 +4,7 @@ using Requires
 
 using Plots, LaTeXStrings
 using DataFrames, StatsPlots, Parameters
-using StatsBase
+using StatsBase, StatisticalRethinking
 
 using DocStringExtensions: SIGNATURES, FIELDS, TYPEDEF
 

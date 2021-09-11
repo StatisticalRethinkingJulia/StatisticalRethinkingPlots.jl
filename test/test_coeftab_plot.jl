@@ -1,7 +1,7 @@
 using StanSample, StatsPlots, StatsBase
-using StatisticalRethinkingPlots
+using StatisticalRethinkingPlots, StatisticalRethinking
 
-df = CSV.read(joinpath("..", "data", "WaffleDivorce.csv"), DataFrame);
+df = CSV.read(sr_datadir("WaffleDivorce.csv"), DataFrame);
 df[!, :M] = zscore(df.Marriage)
 df[!, :A] = zscore(df.MedianAgeMarriage)
 df[!, :D] = zscore(df.Divorce)
