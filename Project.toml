@@ -1,7 +1,7 @@
 name = "StatisticalRethinkingPlots"
 uuid = "e1a513d0-d9d9-49ff-a6dd-9d2e9db473da"
 authors = ["Rob J Goedman <goedman@icloud.com> and contributors"]
-version = "0.4.0"
+version = "0.5.0"
 
 [deps]
 DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
