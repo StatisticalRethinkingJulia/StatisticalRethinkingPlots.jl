@@ -1,6 +1,6 @@
-using StanSample, StatsPlots, StatsBase
-using CSV, DataFrames
-using StatisticalRethinkingPlots, StatisticalRethinking
+using StanSample
+using StatisticalRethinking
+using StatisticalRethinkingPlots
 
 df = CSV.read(sr_datadir("WaffleDivorce.csv"), DataFrame);
 df[!, :M] = zscore(df.Marriage)

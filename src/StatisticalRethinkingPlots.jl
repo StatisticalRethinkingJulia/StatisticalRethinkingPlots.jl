@@ -1,13 +1,14 @@
 module StatisticalRethinkingPlots
 
+using Reexport
 using Requires
 
-using Plots, LaTeXStrings
-using DataFrames, StatsPlots, Parameters
-using StatsBase, StatisticalRethinking
+@reexport using StatsPlots, Plots, LaTeXStrings
+
+using Parameters
+using StatisticalRethinking
 
 using DocStringExtensions: SIGNATURES, FIELDS, TYPEDEF
-
 
 function __init__()
   @require Turing="fce5fe82-541a-59a6-adf8-730c64b5f9a0" include("require/turing/turing_plots.jl")
