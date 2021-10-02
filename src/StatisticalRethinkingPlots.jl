@@ -6,6 +6,7 @@ using Requires
 @reexport using StatsPlots, Plots, LaTeXStrings
 
 using Parameters
+using KernelDensity
 using StatisticalRethinking
 
 using DocStringExtensions: SIGNATURES, FIELDS, TYPEDEF
