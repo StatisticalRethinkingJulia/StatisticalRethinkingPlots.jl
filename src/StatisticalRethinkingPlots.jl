@@ -8,6 +8,7 @@ using Requires
 using Parameters
 using KernelDensity
 using StatisticalRethinking
+using Distributions
 
 using DocStringExtensions: SIGNATURES, FIELDS, TYPEDEF
 
