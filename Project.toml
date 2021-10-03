@@ -1,9 +1,10 @@
 name = "StatisticalRethinkingPlots"
 uuid = "e1a513d0-d9d9-49ff-a6dd-9d2e9db473da"
 authors = ["Rob J Goedman <goedman@icloud.com>, Max Lapan (@Shmuma) and contributors"]
-version = "0.9.0"
+version = "0.9.1"
 
 [deps]
+Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"
 DocStringExtensions = "ffbed154-4ef7-542d-bbb7-c09d3a79fcae"
 KernelDensity = "5ab0869b-81aa-558d-bb23-cbf5423bbe9b"
 LaTeXStrings = "b964fa9f-0449-5b57-a5c2-d3ea65f4040f"
@@ -15,6 +16,7 @@ StatisticalRethinking = "2d09df54-9d0f-5258-8220-54c2a3d4fbee"
 StatsPlots = "f3b207a7-027a-5e70-b257-86293d7955fd"
 
 [compat]
+Distributions = "0.25"
 DocStringExtensions = "0.8"
 KernelDensity = "0.6"
 LaTeXStrings = "1.2"
