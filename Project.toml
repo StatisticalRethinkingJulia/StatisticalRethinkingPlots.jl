@@ -1,7 +1,7 @@
 name = "StatisticalRethinkingPlots"
 uuid = "e1a513d0-d9d9-49ff-a6dd-9d2e9db473da"
 authors = ["Rob J Goedman <goedman@icloud.com>, Max Lapan (@Shmuma) and contributors"]
-version = "0.9.2"
+version = "0.9.3"
 
 [deps]
 Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"
